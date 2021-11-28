@@ -1,0 +1,65 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Chip_Grid_System",
+"language": "GDScript",
+"path": "res://src/Grid_Systems/Chip_Grid_System.gd"
+}, {
+"base": "TileMap",
+"class": "Socket_Grid_System",
+"language": "GDScript",
+"path": "res://src/Grid_Systems/Socket_Grid_System.gd"
+} ]
+_global_script_class_icons={
+"Chip_Grid_System": "",
+"Socket_Grid_System": ""
+}
+
+[application]
+
+config/name="A Be(i)tter Journey"
+config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://src/Singletons/Globals.gd"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[layer_names]
+
+2d_render/layer_1="Panels_Cells"
+2d_render/layer_2="Chips_Cells"
+2d_render/layer_3="Starting/Ending_Conectors"
+2d_render/layer_4="Chips_Conectors"
+2d_physics/layer_1="Panels_Cells"
+2d_physics/layer_2="Chips_Cells"
+2d_physics/layer_3="Starting/Ending_Connectors"
+2d_physics/layer_4="Chips_Connectors"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"
